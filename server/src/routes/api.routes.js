@@ -4,7 +4,7 @@ const apiTopicRouter = require('./api/api.topics.routes');
 const apiQuestionRouter = require('./api/api.questions.routes');
 
 router.use('/user', apiUserRouter);
-router.use('/topic', apiTopicRouter);
-router.use('/question', apiQuestionRouter);
+router.use('/topics', apiTopicRouter);
+router.use('/questions', apiQuestionRouter);
 
 module.exports = router;

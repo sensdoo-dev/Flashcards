@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Themes from "../pages/Themes"
 import Nav from '../widgets/ui/Nav/Nav'
+import Questions from '../pages/Questions/Questions'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: '/themes',
         element: <Themes />
+      },
+      {
+        path: '/question/:topicId',
+        element: <Questions />
       },
     ]
   }

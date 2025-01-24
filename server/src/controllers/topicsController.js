@@ -2,6 +2,20 @@ const TopicsService = require('../services/topicsService');
 const formatResponse = require('../utils/formatResponce');
 
 class TopicsController {
+  static async getAllTopics(req, res) {
+    try {
+      const topics = TopicsService.getAllTopic();
+
+      if (!topics) {
+        res.json(formatResponse(400, 'Темы не найдены'));
+      }
+
+      res.json(topics);
+    } catch (error) {
+      formatResponse(500, 'Лежим, отдыхаем', null, error.message);
+    }
+  }
+
   static async getAllQuestionsByTopicId(req, res) {
     try {
       const { id } = req.params;
