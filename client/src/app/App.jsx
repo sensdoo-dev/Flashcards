@@ -1,11 +1,28 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Themes from "../pages/Themes"
+import Nav from '../widgets/ui/Nav/Nav'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Nav />,
+    children: [
+      {
+        path: '/',
+        // element: <HomePage />
+      },
+      {
+        path: '/themes',
+        element: <Themes />
+      },
+    ]
+  }
+])
 
 function App() {
-
   return (
     <>
-      <h1>Hello</h1>
-      <Themes />
+      <RouterProvider router={router} />
     </>
   )
 }

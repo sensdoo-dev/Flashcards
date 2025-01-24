@@ -1,4 +1,6 @@
-import Theme from "../widgets/ui/Theme"
+import { useEffect } from "react"
+import Theme from "../widgets/ui/Theme/Theme"
+import ApiThemes from "../entities/ApiThemes/ApiThemes"
 
 export default function Themes() {
   const mockArr = [
@@ -6,6 +8,10 @@ export default function Themes() {
     {id: 2, title: 'Я знаю React?'},
     {id: 3, title: 'Гарри Поттер'}
   ]
+
+  useEffect(() => {
+    ApiThemes.getQuestionByThemeId(1)
+  }, [])
 
   return (
     <>
