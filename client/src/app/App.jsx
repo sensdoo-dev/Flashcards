@@ -16,6 +16,10 @@ const router = createBrowserRouter([
         path: '/themes',
         element: <Themes />,
       },
+      {
+        path: '/question/:topicId',
+        element: <Questions />,
+      },
     ],
   },
 ]);
