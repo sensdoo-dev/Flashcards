@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Themes from '../pages/ThemeList/Themes';
+import Questions from '../pages/Questions/Questions';
 import HomePage from '../pages/HomePage/HomePage';
 import Nav from '../widgets/ui/Nav/Nav';
 

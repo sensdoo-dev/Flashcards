@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node /server/index.js",
     "dev": "nodemon /server/index.js",
-    "reset:db": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed"
+    "reset:db": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all"
   },
   "keywords": [],
   "author": "",
