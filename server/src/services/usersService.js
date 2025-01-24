@@ -1,9 +1,36 @@
+const { User } = require('../db/models');
+
 class UserService {
-  static async createUser() {}
+  async createUser(username) {
+    return await User.create({ username });
+  }
 
-  static async getAllUsers() {}
+  async getAllUsers() {
+    return await User.findAll();
+  }
 
-  static async getUserById() {}
+  async getUserById(id) {
+    return await User.findByPk(id);
+  }
+
+  async updateUser(id, username) {
+    const user = await this.getUserById(id);
+    if (user) {
+      user.username = username;
+      await user.save();
+      return user;
+    }
+    return null;
+  }
+
+  async deleteUser(id) {
+    const user = await this.getUserById(id);
+    if (user) {
+      await user.destroy();
+      return true;
+    }
+    return false;
+  }
 }
 
-module.exports = UserService;
+module.exports = new UserService();
