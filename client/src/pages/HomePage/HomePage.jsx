@@ -1,6 +1,8 @@
+// src/pages/HomePage/HomePage.jsx
 import React from 'react';
-import { Form, Input, Button, message } from 'antd';
+import { Form, Input, Button, message, Card } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import './HomePage.module.css'; // Импортируем CSS файл
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -22,32 +24,30 @@ const HomePage = () => {
       }
 
       const data = await response.json();
-      console.log('Пользователь зарегистрирован:', data);
       message.success('Пользователь успешно зарегистрирован!');
-
-      navigate('/themes'); 
+      navigate('/themes');
     } catch (error) {
-      console.error('Ошибка при регистрации:', error);
       message.error('Ошибка при регистрации. Попробуйте еще раз.');
     }
   };
 
   return (
-    <div>
-      <h1>Добро пожаловать!</h1>
-      <Form onFinish={handleRegister}>
-        <Form.Item
-          name="username"
-          rules={[{ required: true, message: 'Пожалуйста, введите имя пользователя!' }]}
-        >
-          <Input placeholder="Введите имя пользователя" />
-        </Form.Item>
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Зарегистрироваться
-          </Button>
-        </Form.Item>
-      </Form>
+    <div className="home-container">
+      <Card title="Регистрация" className="card">
+        <Form onFinish={handleRegister}>
+          <Form.Item
+            name="username"
+            rules={[{ required: true, message: 'Пожалуйста, введите имя пользователя!' }]}
+          >
+            <Input placeholder="Введите имя пользователя" />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
+              Зарегистрироваться
+            </Button>
+          </Form.Item>
+        </Form>
+      </Card>
     </div>
   );
 };
