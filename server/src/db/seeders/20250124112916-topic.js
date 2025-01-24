@@ -8,8 +8,7 @@ module.exports = {
       { title: 'История по сторис', user_id: 1 },
       { title: 'Типа программист', user_id: 1 },
     ]);
-  },
-
+  },   
   async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
