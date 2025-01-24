@@ -3,6 +3,8 @@ const { Topic, Question } = require('../db/models');
 class TopicsService {
   static async getAllTopic() {
     const topics = await Topic.findAll();
+    console.log(topics);
+    
     return topics;
   }
 

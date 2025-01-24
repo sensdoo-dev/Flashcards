@@ -8,3 +8,4 @@ function formatResponse(statusCode, message, data = null, error = null) {
 }
 
 module.exports = formatResponse;
+ 

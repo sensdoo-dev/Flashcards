@@ -5,19 +5,15 @@ import Question from "../../widgets/ui/Question/Question"
 
 export default function Questions() {
 
-  const mockQuestions = [
-    {id: 1, title: 'aaa'},
-    {id: 2, title: 'bbb'},
-    {id: 3, title: 'ccc'},
-    {id: 4, title: 'ddd'}
-  ]
 
   const { topicId } = useParams()
   const [questions, setQuestions] = useState([])
 
   async function questionsHandler() {
     const questions = await ApiQuestions.getAllQuestionsByTopicId(topicId)
-    setQuestions(questions)
+    setQuestions(questions.data)
+    console.log(questions.data);
+    
   }
 
   useEffect(() => {
@@ -27,7 +23,9 @@ export default function Questions() {
   return (
     <>
       <h1>{topicId}</h1>
-      {mockQuestions.map(question => <Question key={question.id} question={question} />)}
+      {questions.map((question) => (
+        <Question key={question.id} question={question} />
+      ))}
     </>
-  )
+  );
 }
