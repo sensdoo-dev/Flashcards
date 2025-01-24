@@ -1,0 +1,30 @@
+/* src/widgets/ui/Nav/Nav.css */
+
+.header {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b, #ffcc00); /* Градиент из трех цветов */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.title {
+    color: #ffffff; /* Белый текст */
+    margin: 0;
+}
+
+.menu {
+    line-height: 64px;
+    margin-left: auto;
+}
+
+.menu .ant-menu-item a {
+    color: #ffffff; /* Белый текст для ссылок */
+}
+
+.menu .ant-menu-item a:hover {
+    color: #ffcc00; /* Желтый цвет при наведении */
+}
+
+.content {
+    padding: 20px;
+}

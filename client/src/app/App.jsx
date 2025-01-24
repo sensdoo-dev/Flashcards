@@ -1,7 +1,7 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Themes from "../pages/Themes"
-import Nav from '../widgets/ui/Nav/Nav'
-import Questions from '../pages/Questions/Questions'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Themes from '../pages/ThemeList/Themes';
+import HomePage from '../pages/HomePage/HomePage';
+import Nav from '../widgets/ui/Nav/Nav';
 
 const router = createBrowserRouter([
   {
@@ -10,26 +10,26 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        // element: <HomePage />
+        element: <HomePage />,
       },
       {
         path: '/themes',
-        element: <Themes />
+        element: <Themes />,
       },
       {
         path: '/question/:topicId',
-        element: <Questions />
+        element: <Questions />,
       },
-    ]
-  }
-])
+    ],
+  },
+]);
 
 function App() {
   return (
     <>
       <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
